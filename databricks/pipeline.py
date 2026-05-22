@@ -2,14 +2,13 @@
 # PROJET OLIST — Pipeline Data End-to-End
 # Databricks + PySpark
 #######============================================================
-
 ######## ── COUCHE BRONZE ────────────────────────────────────────────
-# Chargement des données brutes depuis le volume Databricks
-df = spark.read.csv(
-    "/Volumes/workspace/default/ingrid_projet/olist_orders_dataset.csv",
-    header=True,
-    inferSchema=True
-)
+- # Chargement des données brutes
+- df = spark.read.csv(
+-     "/Volumes/workspace/default/ingrid_projet/olist_orders_dataset.csv",
+-     header=True,
+-     inferSchema=True
+- )
 
 # Sauvegarde en format Delta (données brutes)
 df.write.format("delta").mode("overwrite").save(
