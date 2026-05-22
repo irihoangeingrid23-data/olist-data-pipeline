@@ -45,3 +45,13 @@ df_gold.toPandas().to_csv(
     "/Volumes/workspace/default/ingrid_projet/gold/orders_par_mois.csv",
     index=False
 )
+# Amélioration : ajout de statistiques sur le délai de livraison
+from pyspark.sql.functions import avg, min, max
+
+stats_livraison = df_silver.select(
+    avg("delai_livraison_jours").alias("delai_moyen"),
+    min("delai_livraison_jours").alias("delai_min"),
+    max("delai_livraison_jours").alias("delai_max")
+)
+
+stats_livraison.show()
