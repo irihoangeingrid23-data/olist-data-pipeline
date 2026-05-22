@@ -3,7 +3,7 @@
 # Databricks + PySpark
 # ============================================================
 
-# ── COUCHE BRONZE ────────────────────────────────────────────
+######## ── COUCHE BRONZE ────────────────────────────────────────────
 # Chargement des données brutes depuis le volume Databricks
 df = spark.read.csv(
     "/Volumes/workspace/default/ingrid_projet/olist_orders_dataset.csv",
