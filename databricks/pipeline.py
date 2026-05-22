@@ -45,6 +45,7 @@ df_gold.toPandas().to_csv(
     "/Volumes/workspace/default/ingrid_projet/gold/orders_par_mois.csv",
     index=False
 )
+
 # Amélioration : ajout de statistiques sur le délai de livraison
 from pyspark.sql.functions import avg, min, max
 
